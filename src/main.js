@@ -77,11 +77,12 @@ const handleDistrict = (function () {
   const result = [];
   return function (data, parentId = 0) {
     data.forEach(item => {
+      if (!item) return
       const district = {
         id: generateId(),
         parentId,
         name: item.name,
-        adcode: item.adcode,
+        code: item.adcode,
         center: item.center,
         level: item.level,
       }
